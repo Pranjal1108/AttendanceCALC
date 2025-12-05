@@ -13,7 +13,7 @@ public class Main {
 
         SemesterCalendar calendar = new SemesterCalendar(startDate, endDate);
 
-        // Add fixed holidays
+        
         LocalDate[] fixedHolidays = {
                 LocalDate.parse("2025-08-15"), LocalDate.parse("2025-08-16"),
                 LocalDate.parse("2025-09-05"), LocalDate.parse("2025-10-01"),
@@ -24,7 +24,7 @@ public class Main {
         };
         for (LocalDate h : fixedHolidays) calendar.addHoliday(h);
 
-        // Add vacation period
+        // Wintr holidays
         LocalDate startVac = LocalDate.parse("2025-12-25");
         LocalDate endVac = LocalDate.parse("2026-01-01");
         LocalDate date = startVac;
@@ -58,7 +58,7 @@ public class Main {
             Course c = new Course(name, attended, delivered, credit);
             courses.put(name, c);
 
-            // Automatically assign weekdays
+            
             calendar.addCourseSchedule(name, credit);
         }
 
