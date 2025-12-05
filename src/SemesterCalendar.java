@@ -21,10 +21,10 @@ class SemesterCalendar {
 
     void addCourseSchedule(String courseName, int classesPerWeek) {
         List<DayOfWeek> dayList = new ArrayList<>();
-        DayOfWeek[] weekdays = DayOfWeek.values(); // MONDAY to SUNDAY
+        DayOfWeek[] weekdays = DayOfWeek.values(); 
         int count = 0;
         for (DayOfWeek day : weekdays) {
-            if (day != DayOfWeek.SATURDAY && day != DayOfWeek.SUNDAY) { // skip weekends
+            if (day != DayOfWeek.FRIDAY && day != DayOfWeek.SATURDAY) { 
                 dayList.add(day);
                 count++;
                 if (count >= classesPerWeek) break;
